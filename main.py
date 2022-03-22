@@ -1,11 +1,9 @@
 import datetime
 import json
-
 from flask import Flask, render_template, request
 # from datetime import datetime
 
 app = Flask(__name__)
-
 
 # message1 = {
 #     "text": "Как дела",
@@ -18,7 +16,6 @@ app = Flask(__name__)
 #     "sender": "Василий",
 #     "time": "19:21"
 # }
-
 
 # messages = []
 DB_FILE = "./data/db.json" # Путь к файлу базы данных
@@ -79,12 +76,10 @@ def index_page():
 def get_messages():
     return {"messages": messages}
 
-
 # Показать форму чата
 @app.route("/form")
 def form():
     return render_template("form.html")
-
 
 @app.route("/send_message")
 def send_message():
@@ -96,8 +91,6 @@ def send_message():
     return "OK"
 
 app.run() #Запускаем веб-приложение
-
-
 
 #
 # ПЛАН
